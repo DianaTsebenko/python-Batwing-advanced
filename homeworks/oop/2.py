@@ -6,7 +6,7 @@ class Person:
         self.left_hand = left_hand.type
 
     def information(self):
-        print(f'I have {self.right_hand} right hand and in my left hand I have {self.left_hand}')
+        print(f'I have {self.right_hand} right hand and in my left hand I have {self.left_hand}.')
 
 
 class Arm:

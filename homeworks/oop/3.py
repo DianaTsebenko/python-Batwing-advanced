@@ -15,7 +15,7 @@ class Profile(DictMixin):
         self.sex = sex
 
 
-diana = Profile("Diana", "Tsebenko", "+380984444444", "street Lvivska", 'diana@gmail.com', 'july 6', 17, 'woman')
+diana = Profile("Diana", "Tsebenko", "+380974444444", "street Lvivska", 'diana@gmail.com', 'july 6', 17, 'woman')
 print(diana.to_dict())
 print(f'I am {diana.sex} {diana.name} {diana.last_name} and I am {diana.age}.\nMy birthday is in {diana.birthday}\n'
       f'My phone number and email are {diana.phone_number}, {diana.email}. I live in {diana.address}')

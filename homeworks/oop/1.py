@@ -61,18 +61,18 @@ for animal in animals:
     animal.info()
     animal.eating()
     animal.sleeping()
-    print('-' * 10)
+    print('-' * 12)
 
 dog.make_sound()
 cat.make_sound()
 horse.jumping()
 seal.swimming()
-print('-' * 10)
+print('-' * 12)
 
 for animal in animals:
     print(isinstance(animal, Animals))
 
-print('-' * 10)
+print('-' * 12)
 
 
 # 1a.
