@@ -56,7 +56,7 @@ class HPLaptop(Laptop, ABC):
         print(f'And {self.dynamics} dynamics')
 
 
-laptop = HPLaptop(18, "ukranian", "has", "has", 3, 2)
+laptop = HPLaptop(18, "ukranian", "has", "has", 4, 2)
 laptop.get_screen()
 laptop.get_keyboard()
 laptop.get_touchpad()

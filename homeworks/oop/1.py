@@ -109,7 +109,7 @@ class Centaur(Human, Animals):
         print(f'{self.name} has {self.weapon} as a weapon')
 
 
-centaur = Centaur("Dave", "pizza", 8, "university", 4, "bow")
+centaur = Centaur("Dave", "pizza", 8, "university", 5, "bow")
 
 centaur.information()
 centaur.eating()

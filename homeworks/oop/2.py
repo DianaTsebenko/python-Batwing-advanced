@@ -24,7 +24,7 @@ class CellPhone:
         self.screen = screen
 
     def info(self):
-        print(f'My phone has {self.screen} screen')
+        print(f'My phone has {self.screen} screen.')
 
 
 class Screen:
