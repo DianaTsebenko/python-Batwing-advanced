@@ -1,6 +1,6 @@
 class DictMixin():
     def to_dict(self):
-        return self.__dict__
+        return list(self.__dict__.values())
 
 
 class Profile(DictMixin):
