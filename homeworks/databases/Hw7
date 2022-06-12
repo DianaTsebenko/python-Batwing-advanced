@@ -1,0 +1,58 @@
+1.
+sudo mysql -u root --password=06.07.2004 school66 < school66.sql
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| school66           |
+| shop               |
+| sys                |
++--------------------+
+6 rows in set (0,01 sec)
+
+2.
+mysql> USE school66;
+
+mysql> CREATE TABLE level (student_id INT NOT NULL, level_number INT);
+mysql> INSERT INTO students (first_name, last_name) VALUES ("Diana", "Tsebenko");
+mysql> INSERT INTO level (level_number, student_id) VALUES (10, 1), (4,2), (6, 3), (3,4), (11,5);
+
+mysql> SELECT s.first_name, s.last_name, l.level_number FROM level l INNER JOIN students s ON l.student_id = s.id;
++------------+-----------+--------------+
+| first_name | last_name | level_number |
++------------+-----------+--------------+
+| Ivan       | Pidhaynuy |           10 |
+| Petro      | Pravdoryb |            4 |
+| Yuriy      | Skobylko  |            6 |
+| Liubomyr   | Luzhnyi   |            3 |
+| Diana      | Tsebenko  |           11 |
++------------+-----------+--------------+
+5 rows in set (0,11 sec)
+
+3.
+mysql> SELECT s.id, s.first_name, s.last_name, lev.level_number, t.name teachers_name, l.name lesson, l.id lesson_id FROM students s INNER JOI
+N level lev ON s.id = lev.student_id INNER JOIN students_lessons s_les ON s.id = s_les.student_id INNER JOIN lessons l ON l.id = s_les.lesson_
+id LEFT JOIN teachers t ON t.lesson_id = s_les.lesson_id ORDER BY s.id;
++----+------------+-----------+--------------+----------------------+----------+-----------+
+| id | first_name | last_name | level_number | teachers_name        | lesson   | lesson_id |
++----+------------+-----------+--------------+----------------------+----------+-----------+
+|  1 | Ivan       | Pidhaynuy |           10 | NULL                 | Graphity |         4 |
+|  1 | Ivan       | Pidhaynuy |           10 | Yulia Liubomyrivna   | IT       |         3 |
+|  2 | Petro      | Pravdoryb |            4 | Margaryta Ivanivna   | Math     |         2 |
+|  2 | Petro      | Pravdoryb |            4 | Kateryna Yuriivna    | Biology  |         1 |
+|  2 | Petro      | Pravdoryb |            4 | Roskolana Stepanivna | Biology  |         1 |
+|  3 | Yuriy      | Skobylko  |            6 | Margaryta Ivanivna   | Math     |         2 |
+|  3 | Yuriy      | Skobylko  |            6 | Kateryna Yuriivna    | Biology  |         1 |
+|  3 | Yuriy      | Skobylko  |            6 | Roskolana Stepanivna | Biology  |         1 |
+|  4 | Liubomyr   | Luzhnyi   |            3 | Yulia Liubomyrivna   | IT       |         3 |
+|  4 | Liubomyr   | Luzhnyi   |            3 | Kateryna Yuriivna    | Biology  |         1 |
+|  4 | Liubomyr   | Luzhnyi   |            3 | Roskolana Stepanivna | Biology  |         1 |
++----+------------+-----------+--------------+----------------------+----------+-----------+
+11 rows in set (0,04 sec)
+
+
+
