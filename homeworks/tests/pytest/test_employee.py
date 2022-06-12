@@ -1,6 +1,6 @@
 from employee import Employee
 
-employer = Employee("diana", "tsebenko", 400)
+employer = Employee("diana", "tsebenko", 500)
 
 
 def test_email():
@@ -14,6 +14,6 @@ def test_fullname():
 
 def test_apply_raise():
     employer.apply_raise()
-    assert employer.pay == 420
+    assert employer.pay == 525
 
 

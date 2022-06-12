@@ -3,7 +3,7 @@ import pytest
 
 
 def test_add():
-    assert Calculator.add(101, 5) == 106
+    assert Calculator.add(100, 5) == 105
 
 
 def test_substract():

@@ -4,7 +4,7 @@ from functions_to_test import Calculator
 
 class TestFunctions(unittest.TestCase):
     def test_add(self):
-        self.assertEqual(Calculator.add(12, 2), 14)
+        self.assertEqual(Calculator.add(19, 2), 21)
         self.assertEqual(Calculator.add(31, 69), 100)
 
     def test_substract(self):
