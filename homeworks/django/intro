@@ -1,0 +1,3 @@
+1. Create Nginx configuration for django intro app
+2. Create gunicorn configuration for django intro app
+Run with gunicorn and nginx

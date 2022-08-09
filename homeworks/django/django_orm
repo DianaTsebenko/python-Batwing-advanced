@@ -1,0 +1,3 @@
+1. Create category model
+2. Create page for category where displaying all products for this category
+3. Add ability to add product to many categories and one category for many products

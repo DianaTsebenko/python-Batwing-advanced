@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - '3308:3308'
+    environment:
+       MYSQL_DATABASE: 'django'
+       MYSQL_USER: 'django'
+       MYSQL_PASSWORD: 'django'
+       MYSQL_ROOT_PASSWORD: '22082003'
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    networks:
+      - app
+
+  web:
+    build: .
+    command: ./wait-for-it.sh db:3306 -- python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/django_project
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    links:
+      - db
+    networks:
+      - app
+    environment:
+      PYTHONUNBUFFERED: 1
+
+networks:
+  app:
+    driver: bridge
