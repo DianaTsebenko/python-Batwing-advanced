@@ -8,7 +8,7 @@ def hello_world():
     return render_template('index.html', variable=a)
 
 
-@app.route("/sum/<first_num>/<second_num>")
+@app.route("/sum/<int:first_num>/<int:second_num>")
 def sum(first_num, second_num):
     result = int(first_num) + int(second_num)
     return render_template('index.html', variable=result)
