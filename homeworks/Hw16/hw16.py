@@ -66,7 +66,7 @@ def check_ip_address(ip):
         print(f'{ip} - Invalid IP')
 
 
-arr_ip = ['216.8.94.196', '0.0.0.0', '216.8.94']
+arr_ip = ['128.120.94.112', '0.1.2.0', '0.0.0']
 
 for i in arr_ip:
     check_ip_address(i)
