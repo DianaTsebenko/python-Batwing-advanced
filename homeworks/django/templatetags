@@ -1,0 +1,1 @@
+1. Create templatetag which will return menu items and use it in base.html
